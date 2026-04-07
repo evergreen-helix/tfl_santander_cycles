@@ -65,3 +65,7 @@ It seems that the schemas seem to vary a bit between different csvs
 
 
 I have identified a number of different schemas the usage_stats data takes
+
+I have built a system to normalise data in accordance with these difference schemas, and then write them to a single duckdb.
+
+That duckdb is persistant, 
