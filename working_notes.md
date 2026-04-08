@@ -68,4 +68,27 @@ I have identified a number of different schemas the usage_stats data takes
 
 I have built a system to normalise data in accordance with these difference schemas, and then write them to a single duckdb.
 
-That duckdb is persistant, 
+That duckdb is persistant.
+
+
+#2 initial inspection
+
+as we're using duckdb, a lot of the initial data inspection is done through .execute commands which have sql calls in them.
+
+SQL calls via duckdb won't replace all of the data manipulation, but as it is so efficient for this work because of its columnar storage, it is a valuable tool
+
+Already I am doing things that I find novel, like using an fstring to generate sql strings that i then call in executes to find the NULL count in each column
+
+weather enrichment
+
+using openmeteo, and they have a handy api call builder
+uv pip install openmeteo-requests
+uv pip install requests-cache retry-requests numpy pandas
+
+uv pip install pyarrow
+
+this one I'm just storing as a parquet as it's not huge, may become a data set later on, we will see
+
+the need for improved file organisation is only going to grow
+
+uv pip install holidays
